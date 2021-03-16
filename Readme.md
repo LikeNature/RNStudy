@@ -4,7 +4,6 @@
 
 ## 2. React-Native_Basic
 
-## 3. Clone-project
 
 
 
