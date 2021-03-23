@@ -1,6 +1,6 @@
 # Android IDE
 
-## 주요 단축키 모음
+## 1. 주요 단축키 모음
 Ctrl + Shift + A : 액션찾기
 Ctrl + Space : 자동완성
 Alt + Insert : 코드생성
@@ -21,3 +21,47 @@ Ctrl + Alt + M : 함수 추출하기
 Ctrl + J : 라이브 템플릿 넣기
 
 모든 단축키 확인하기 :  [Help→ Default Keymap Reference] 
+
+## 2. AVD 변경(애뮬레이터 <-> 디바이스)
+
+```bash
+# 디바이스 이름 확인
+adb devices
+
+# 실행 디바이스 변경 명령-
+adb -s [실행하고자하는 디바이스이름] reverse tcp:8081 tcp:8081
+
+# 디바이스 개발자 메뉴 open
+adb shell input key
+```
+
+## 3. WebVeiw 
+
+### 1. Linking
+
+https://reactnative.dev/docs/linking
+
+```tsx
+import { Linking } from 'react-native';
+```
+
+```tsx
+// 사용예
+
+<TouchableOpacity
+    accessibilityRole="button"
+    onPress={() => Linking.openURL(link)}  // Linking 사용
+    style={styles.linkContainer}>
+    <Text style={styles.link}>{title}</Text>
+    <Text
+        style={[
+            styles.description,
+            {
+                color: isDarkMode ? Colors.lighter : Colors.dark,
+            },
+        ]}>
+        {description}
+    </Text>
+</TouchableOpacity>
+```
+
